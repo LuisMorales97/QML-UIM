@@ -8,6 +8,8 @@ ApplicationWindow{
     width: 360
     height: 600
 
+    FontLoader{id: mainFont; source: "../fonts/materialdesignicons-webfont.ttf"}
+
     Rectangle{
         anchors.fill: parent
         color: "#191928"

@@ -35,6 +35,36 @@ Component{
                     border.color: "orange"
                     border.width: 1
                 }
+
+                Column {
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.topMargin: 18
+
+                    Text{
+                        text: title
+                        leftPadding: 18
+                        horizontalAlignment: Text.AlignLeft
+                        color: "white"
+                    }
+
+                    Text{
+                        text: "Project: " + section
+                        color: "#727272"
+                        leftPadding: 18
+                        visible: taskItem.expanded
+                    }
+                }
+                IconicButton{
+                    Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+                    Layout. rightMargin: 18
+                    color: "#727272"
+                    text: "\uf1d8"
+
+                    onClicked:{
+                        taskItem.expanded = !taskItem.expanded
+                    }
+                }
             }
         }
 
