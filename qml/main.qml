@@ -10,6 +10,7 @@ ApplicationWindow{
 
     FontLoader{id: mainFont; source: "../fonts/materialdesignicons-webfont.ttf"}
 
+
     Rectangle{
         anchors.fill: parent
         color: "#191928"

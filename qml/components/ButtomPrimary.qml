@@ -9,4 +9,30 @@ Button{
         radius: 12
         color: "#00a8b0" 
     }
+
+    contentItem: Rectangle{
+        anchors.fill: parent
+        color: "transparent"
+
+        RowLayout{
+            anchors.centerIn: parent
+            height: parent.height
+
+            Text{
+                font.family:mainFont.name
+                font.pixelSize: 22
+                text: "\uf415"
+                color: "white"
+            }
+
+            Text{
+                text: qsTr("Agregar Tarea")
+                font.family: "Noboto Bold"
+                font.pixelSize: 12
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                color: "white"
+            }
+        }
+    }
 }

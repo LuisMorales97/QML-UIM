@@ -6,11 +6,13 @@ Component{
     Rectangle{
         id: taskItem
         width: parent.width
-        height: !expanded ? 48 : 128
+        height: !expanded ? 48 : (tArea.height + 96) > 128 ? tArea.height + 96 : 128
         radius: 8
         color: "#222231"
 
         property bool expanded: false
+        property var rand_color: ["dodgerblue", "#ff424c", "yellow", "#ff9700", "#00a8b", "#00ed06"]
+
     
     ColumnLayout{
         width: parent.width
@@ -32,7 +34,7 @@ Component{
                     height: 13
                     radius: height / 2
                     color: "transparent"
-                    border.color: "orange"
+                    border.color: rand_color[ind%7]
                     border.width: 1
                 }
 
@@ -71,8 +73,28 @@ Component{
         Rectangle{
             Layout.fillWidth: true
             Layout.fillHeight: true
+            Layout.leftMargin: 18
             color: "transparent"
             visible: taskItem.expanded
+
+            TextArea{
+                id: tArea
+                width: parent.width
+                selectByMouse: true
+                selectionColor: "orange"
+                selectedTextColor: "white"
+                padding: 0
+                topPadding: 6
+                font.pixelSize: 12
+                color: "#727272"
+                cursorDelegate: Component{
+                    Rectangle{
+                        width: 1
+                        height: 1
+                        color: "transparent"
+                    }
+                }
+            }
         }
 
         Rectangle{
@@ -81,6 +103,47 @@ Component{
             Layout.alignment: Qt.AlignBottom
             color: "transparent"
             visible: taskItem.expanded
+
+            Row{
+                spacing: 8
+
+                anchors{
+                    top: parent.top
+                    bottom: parent.bottom
+                    right: parent.right
+                    topMargin: 18
+                    bottomMargin: 18
+                    rightMargin: 18
+                }
+
+                Text{
+                    font.family: mainFont.name
+                    font.pixelSize: 20
+                    color: "#727272"
+                    text: "\uf150"
+                }
+
+                Text{
+                    font.family: mainFont.name
+                    font.pixelSize: 20
+                    color: "#727272"
+                    text: "\ufc92"
+                }
+
+                Text{
+                    font.family: mainFont.name
+                    font.pixelSize: 20
+                    color: "#727272"
+                    text: "\ufb42"
+                }
+
+                Text{
+                    font.family: mainFont.name
+                    font.pixelSize: 20
+                    color: "#727272"
+                    text: "\uf224"
+                }
+            }
         }
 
     }

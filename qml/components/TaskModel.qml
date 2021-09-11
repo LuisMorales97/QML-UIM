@@ -9,19 +9,19 @@ ListModel{
     }
 
     ListElement{
-        ind: 0
+        ind: 1
         section: "Pendientes"
         title: "Enviar Estimacion"
     }
 
     ListElement{
-        ind: 0
+        ind: 2
         section: "Desarrollo"
         title: "Comenzar Desarrollo"
     }
 
     ListElement{
-        ind: 0
+        ind: 3
         section: "Desarrollo"
         title: "Reunion Cliente"
     }
